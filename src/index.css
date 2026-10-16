@@ -1,0 +1,230 @@
+:root {
+  --color-bg: #0D0E10;
+  --color-surface: #141619;
+  --color-surface-hover: #1C1F24;
+  --color-surface-card: #16181D;
+  --color-border: #262A33;
+  --color-border-subtle: #1E2229;
+  
+  --color-primary: #E66A2B; /* Burnt Orange */
+  --color-primary-light: #FF8547;
+  --color-primary-dark: #B94C16;
+  --color-primary-glow: rgba(230, 106, 43, 0.25);
+  
+  --color-cream: #F5EDE4; /* Warm Cream */
+  --color-cream-muted: #D1C5B7;
+  --color-text-muted: #9BA3AF;
+  --color-wood: #8B5A2B;
+  --color-wood-dark: #4A3018;
+  --color-amber-glow: rgba(255, 179, 71, 0.15);
+
+  --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  selection-background-color: var(--color-primary);
+  selection-color: #0D0E10;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #0D0E10;
+}
+
+/* Typography Utility */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+  color: var(--color-cream);
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+}
+
+/* Badge Utility */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  background: rgba(230, 106, 43, 0.12);
+  border: 1px solid rgba(230, 106, 43, 0.3);
+  color: var(--color-primary-light);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-green {
+  background: rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  color: #2ECC71;
+}
+
+/* Glow effects */
+.ambient-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.65rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.925rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #0D0E10;
+  box-shadow: 0 4px 20px rgba(230, 106, 43, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 106, 43, 0.5);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-border);
+  background-color: rgba(20, 22, 25, 0.6);
+  color: var(--color-cream);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: rgba(230, 106, 43, 0.08);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #0D0E10;
+  font-weight: 700;
+}
+
+.btn-whatsapp:hover {
+  background: #22BF5B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+/* Animations */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes stringLightFlicker {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.75; }
+  85% { opacity: 1; }
+}
+
+.pulse-anim {
+  animation: pulseSubtle 4s ease-in-out infinite;
+}
+
+.float-anim {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+/* String light garland decoration */
+.string-lights-garland {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+  opacity: 0.85;
+}

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Dark rich background radial gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#18191D"/>
+      <stop offset="85%" stop-color="#0B0C0E"/>
+      <stop offset="100%" stop-color="#08080A"/>
+    </radialGradient>
+
+    <!-- Warm Burnt Orange gradients for 'M' and '26' -->
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A29"/>
+      <stop offset="100%" stop-color="#E25610"/>
+    </linearGradient>
+
+    <!-- Steam gradient -->
+    <linearGradient id="steamGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#E25610"/>
+      <stop offset="100%" stop-color="#FF9347"/>
+    </linearGradient>
+
+    <!-- Outer ring gradient with split orange/grey arc -->
+    <linearGradient id="orangeRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7A29"/>
+      <stop offset="100%" stop-color="#E25610"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Circular background badge -->
+  <circle cx="250" cy="250" r="236" fill="url(#bgGlow)"/>
+
+  <!-- Left orange crescent ring arc -->
+  <path d="M 250 20 A 230 230 0 1 0 250 480" fill="none" stroke="url(#orangeRing)" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Right dark charcoal/silver-grey crescent ring arc -->
+  <path d="M 250 20 A 230 230 0 0 1 250 480" fill="none" stroke="#686E78" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 3 Rising Wavy Steam Wisps above cup lid -->
+  <g fill="none" stroke="url(#steamGrad)" stroke-width="5.5" stroke-linecap="round">
+    <path d="M 334 100 C 331 92, 337 84, 334 76 C 332 70, 335 65, 334 60"/>
+    <path d="M 347 102 C 344 91, 351 82, 348 72 C 345 64, 348 57, 347 52"/>
+    <path d="M 360 100 C 357 92, 363 84, 360 76 C 358 70, 361 65, 360 60"/>
+  </g>
+
+  <!-- Coffee Cup Lid (2-tier charcoal grey) -->
+  <!-- Top tier -->
+  <polygon points="316,118 378,118 372,108 322,108" fill="#585D66"/>
+  <!-- Bottom rim tier -->
+  <rect x="306" y="118" width="82" height="13" rx="4" fill="#6A707C"/>
+
+  <!-- Coffee Cup Body integrated into the '26' glyph -->
+  <!-- The Letter 'M' in bold burnt orange -->
+  <g fill="url(#orangeGrad)">
+    <!-- Left vertical upright of M -->
+    <rect x="110" y="132" width="23" height="198" rx="2"/>
+    <!-- Diagonal left down-stroke of M -->
+    <polygon points="133,132 178,280 197,280 133,158"/>
+    <!-- Diagonal right up-stroke of M with subtle depth overlap -->
+    <polygon points="178,280 207,185 224,185 188,298"/>
+    <!-- Right vertical upright of M -->
+    <rect x="207" y="132" width="23" height="198" rx="2"/>
+  </g>
+
+  <!-- The Interlocking '26' forming the Coffee Cup in Burnt Orange Outline & Geometry -->
+  <g fill="none" stroke="url(#orangeGrad)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Number 2 shape: cup top left rim curving into diagonal base -->
+    <path d="M 314 175 C 314 150, 372 150, 372 185 C 372 232, 318 252, 318 290 L 388 290"/>
+    <!-- Number 6 / Lower Cup wrap: looping down and around -->
+    <path d="M 368 152 L 368 288 C 368 316, 320 316, 320 286 C 320 254, 396 254, 396 286 C 396 320, 322 320, 322 288"/>
+  </g>
+
+  <!-- Brand Name: MINI CAFE 26 -->
+  <text x="250" y="372" text-anchor="middle" font-family="'Manrope', 'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="29" fill="#FFFFFF" letter-spacing="9">
+    MINI CAFE <tspan fill="url(#orangeGrad)">26</tspan>
+  </text>
+
+  <!-- Divider with decorative Coffee Bean in center -->
+  <g>
+    <!-- Left line -->
+    <line x1="140" y1="400" x2="225" y2="400" stroke="#7A808C" stroke-width="1.2" opacity="0.8"/>
+    <!-- Coffee bean symbol -->
+    <g transform="translate(250, 400)">
+      <ellipse cx="0" cy="0" rx="9" ry="12" fill="url(#orangeGrad)" transform="rotate(30)"/>
+      <path d="M -3 -11 C 2 -5, -2 4, 3 11" fill="none" stroke="#101114" stroke-width="2" stroke-linecap="round" transform="rotate(30)"/>
+    </g>
+    <!-- Right line -->
+    <line x1="275" y1="400" x2="360" y2="400" stroke="#7A808C" stroke-width="1.2" opacity="0.8"/>
+  </g>
+
+  <!-- Arc Tagline: GOOD COFFEE • GOOD MOOD -->
+  <!-- Circular text path definition -->
+  <path id="taglinePath" d="M 125 400 A 185 185 0 0 0 375 400" fill="none"/>
+  <text font-family="'Manrope', sans-serif" font-weight="700" font-size="16" fill="#C5CAD3" letter-spacing="4.5">
+    <textPath href="#taglinePath" startOffset="50%" text-anchor="middle">
+      GOOD COFFEE  •  GOOD MOOD
+    </textPath>
+  </text>
+</svg>
